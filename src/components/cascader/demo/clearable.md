@@ -1,3 +1,7 @@
+---
+order: 3
+---
+
 + 可清空的级联选择
 
 
@@ -53,7 +57,6 @@ export default {
                     {
                         value: 'anqing',
                         label: '安庆',
-                        disabled: true,
                     }
                 ]
             }, {
@@ -63,12 +66,10 @@ export default {
                     {
                         value: 'huzhou',
                         label: '湖州',
-                        disabled: true,
                         children: [
                             {
                                 value: 'moganshan',
                                 label: '莫干山',
-                                disabled: true,
                             },
                             {
                                 value: 'baicaoyuan',
@@ -87,4 +88,4 @@ export default {
 }
 </script>
 ```
-Cascader组件用于选择具有级联结构的数据
+通过设置 clearable 属性来提供清空选择的功能。

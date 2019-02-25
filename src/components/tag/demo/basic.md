@@ -1,4 +1,6 @@
-基本用法
+---
+order: 0
+---
 
 ```vue
 <template>
@@ -12,10 +14,8 @@
     </div>
 </template>
 
-
 <script>
 import { Tag } from 'bview'
-
 
 export default {
     components: { Tag } ,
@@ -36,5 +36,6 @@ export default {
     } ,
 }
 </script>
-
 ```
+
+基本用法

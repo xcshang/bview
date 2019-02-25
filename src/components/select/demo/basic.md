@@ -1,9 +1,9 @@
-基本用法
++ 基本用法
 
 ```vue
 <template>
     <Select 
-        style="width: 140px;"
+        style="width: 240px;"
         placeholder="请选择学历"
         v-model="value"
         labelInValue

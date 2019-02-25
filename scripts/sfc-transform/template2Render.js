@@ -4,6 +4,7 @@ const NullSFCScriptExport = `export default {}`
 const babel = require( `@babel/core` )
 const babelPluginImportBview = require( `../babel-helper/babel-plugin-import-bview` )
 const babelPluginDefault2Export = require( `../babel-helper/babel-plugin-default2export` )
+const babelPluginVueJsx = require( `babel-plugin-transform-vue-jsx` )
 const { parseStyles } = require( `./parseStyles` )
 const withStatement2RenderFunction = withStmt => {
     return transpile( `function render() { ${withStmt} }` )
@@ -38,6 +39,7 @@ const parse = ( content , name , metadata ) => {
             return j( new Error( `解析的vue文件内容不能为空` ) )
         }
         let vueDescriptor = compiler.parseComponent( content ) ,
+            { yamlConfig } = metadata ,
             { template , script , styles } = vueDescriptor ,
             scriptTxt = script ? script.content : NullSFCScriptExport ,
             templateTxt = template ? template.content : `` ,
@@ -57,6 +59,7 @@ const parse = ( content , name , metadata ) => {
                     code: false ,
                     sourceType: `module` ,
                     plugins: [
+                        babelPluginVueJsx ,
                         [ babelPluginImportBview , { libraryName: `bview` } ] ,
                         [
                             babelPluginDefault2Export ,
@@ -66,6 +69,7 @@ const parse = ( content , name , metadata ) => {
                                     .map( withStatement2RenderFunction )
                                     .join( `,` )}]` ,
                                 exportName: name ,
+                                yamlConfig ,
                             } ,
                         ] ,
                     ] ,

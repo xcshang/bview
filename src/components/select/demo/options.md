@@ -1,10 +1,10 @@
 
-使用options替代Option组件
+
 
 ```vue
 <template>
     <Select 
-        style="width: 140px;"
+        style="width: 240px;"
         placeholder="请选择学历"
         v-model="value"
         :options="options"
@@ -36,3 +36,4 @@ export default {
 }
 </script>
 ```
+使用options替代Option组件

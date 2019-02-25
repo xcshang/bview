@@ -1,3 +1,7 @@
+---
+order: 4
+---
+
 + 禁用状态的级联选择
 
 
@@ -86,4 +90,4 @@ export default {
 }
 </script>
 ```
-Cascader组件用于选择具有级联结构的数据
+通过给级联数据项设置 disabled: true 可以禁用该项，用户无法选中。

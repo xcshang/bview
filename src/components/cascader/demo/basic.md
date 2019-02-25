@@ -1,3 +1,7 @@
+---
+order: 1
+---
+
 + 基本用法
 
 
@@ -89,4 +93,4 @@ export default {
 }
 </script>
 ```
-Cascader组件用于选择具有级联结构的数据
+Cascader组件用于选择具有级联结构的数据，对数据格式有要求。数据项中需包含 value 、 label属性，children 为子集，具体格式可参考示例代码中的 data 对象。可使用 v-model 对选中值进行双向绑定。

@@ -1,4 +1,6 @@
-禁用`disabled`
+---
+order: 1
+---
 
 ```vue
 <template>
@@ -9,10 +11,8 @@
     </div>
 </template>
 
-
 <script>
 import { Tag } from 'bview'
-
 
 export default {
     components: { Tag } ,
@@ -20,3 +20,5 @@ export default {
 </script>
 
 ```
+
+禁用`disabled`
